@@ -11,15 +11,19 @@
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
 
     background:
-        linear-gradient(135deg, #ffd6e8, #d6f0ff, #e7d6ff, #fff3c4);
+        linear-gradient(
+            135deg,
+            #ffd6e8,
+            #d6f0ff,
+            #e7d6ff,
+            #fff3c4
+        );
 
     background-size: 400% 400%;
-
-    line-height: 1.6;
-
-    min-height: 100vh;
 }
 
 
@@ -29,11 +33,13 @@ body {
 
 header {
     background:
-        linear-gradient(90deg,
-        #ff5f9e,
-        #8b5cf6,
-        #3b82f6,
-        #06b6d4);
+        linear-gradient(
+            90deg,
+            #ff5f9e,
+            #8b5cf6,
+            #3b82f6,
+            #06b6d4
+        );
 
     color: white;
 
@@ -44,10 +50,10 @@ header {
     align-items: center;
 
     flex-wrap: wrap;
-
     gap: 1rem;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
@@ -57,7 +63,7 @@ header h1 {
 
 
 /* ========================================
-   NAV TOGGLE (hamburger, mobile)
+   NAV TOGGLE
 ======================================== */
 
 .nav-toggle {
@@ -66,8 +72,10 @@ header h1 {
 
 .nav-toggle-label {
     display: none;
-    font-size: 1.6rem;
+
+    font-size: 1.8rem;
     color: white;
+
     cursor: pointer;
     line-height: 1;
 }
@@ -81,7 +89,6 @@ header nav ul {
     list-style: none;
 
     display: flex;
-
     flex-wrap: wrap;
 
     gap: 0.7rem;
@@ -89,6 +96,8 @@ header nav ul {
 
 header nav a {
     color: white;
+
+    text-decoration: none;
 
     padding: 0.5rem 0.9rem;
 
@@ -122,7 +131,7 @@ main {
 
 
 /* ========================================
-   SECTION / CARD
+   SECTION
 ======================================== */
 
 section {
@@ -135,7 +144,7 @@ section {
     margin-bottom: 1.8rem;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.12);
+        0 10px 30px rgba(0, 0, 0, 0.12);
 
     transition: 0.3s;
 }
@@ -156,14 +165,17 @@ section h2 {
 
 
 /* ========================================
-   STATISTIK
+   RINGKASAN / STATISTIK
 ======================================== */
 
 .ringkasan-grid {
     display: grid;
 
+    /*
+       4 card sejajar di layar laptop
+    */
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(4, 1fr);
 
     gap: 1.2rem;
 
@@ -172,13 +184,19 @@ section h2 {
     box-shadow: none;
 
     padding: 0;
+
+    width: 100%;
 }
 
 
-/* CARD STATISTIK */
+/* ========================================
+   CARD RINGKASAN
+======================================== */
 
 .ringkasan-grid article {
-    padding: 1.8rem;
+    min-height: 150px;
+
+    padding: 1.8rem 1rem;
 
     border-radius: 20px;
 
@@ -186,62 +204,77 @@ section h2 {
 
     color: white;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     box-shadow:
-        0 10px 25px rgba(0,0,0,0.15);
+        0 10px 25px rgba(0, 0, 0, 0.15);
 
     transition: 0.3s;
 }
 
 
-/* CARD 1 - PINK */
+/* ========================================
+   CARD 1 - TOTAL BUKU
+======================================== */
 
 .ringkasan-grid article:nth-child(1) {
     background:
-        linear-gradient(135deg,
-        #ff4f81,
-        #ff8fab);
+        linear-gradient(
+            135deg,
+            #ff4f81,
+            #ff8fab
+        );
 }
 
 
-/* CARD 2 - UNGU */
+/* ========================================
+   CARD 2 - TOTAL ANGGOTA
+======================================== */
 
 .ringkasan-grid article:nth-child(2) {
     background:
-        linear-gradient(135deg,
-        #7c3aed,
-        #a78bfa);
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #a78bfa
+        );
 }
 
 
-/* CARD 3 - BIRU */
+/* ========================================
+   CARD 3 - SEDANG DIPINJAM
+======================================== */
 
 .ringkasan-grid article:nth-child(3) {
     background:
-        linear-gradient(135deg,
-        #2563eb,
-        #60a5fa);
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #60a5fa
+        );
 }
 
 
-/* CARD 4 - HIJAU */
+/* ========================================
+   CARD 4 - BUKU TERLAMBAT
+======================================== */
 
 .ringkasan-grid article:nth-child(4) {
     background:
-        linear-gradient(135deg,
-        #10b981,
-        #6ee7b7);
+        linear-gradient(
+            135deg,
+            #10b981,
+            #6ee7b7
+        );
 }
 
 
-/* CARD 5 - ORANGE */
-
-.ringkasan-grid article:nth-child(5) {
-    background:
-        linear-gradient(135deg,
-        #f97316,
-        #fdba74);
-}
-
+/* ========================================
+   ANIMASI HOVER CARD
+======================================== */
 
 .ringkasan-grid article:hover {
     transform:
@@ -249,7 +282,7 @@ section h2 {
         rotate(1deg);
 
     box-shadow:
-        0 18px 35px rgba(0,0,0,0.2);
+        0 18px 35px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -272,21 +305,22 @@ section h2 {
 
 
 /* ========================================
-   TABLE
+   TABLE RESPONSIVE
 ======================================== */
 
 .table-responsive {
+    width: 100%;
+
     overflow-x: auto;
+
+    border-radius: 15px;
 }
+
 
 table {
     width: 100%;
 
     border-collapse: collapse;
-
-    overflow: hidden;
-
-    border-radius: 15px;
 
     background-color: white;
 }
@@ -294,10 +328,12 @@ table {
 
 thead {
     background:
-        linear-gradient(90deg,
-        #ff5f9e,
-        #8b5cf6,
-        #3b82f6);
+        linear-gradient(
+            90deg,
+            #ff5f9e,
+            #8b5cf6,
+            #3b82f6
+        );
 
     color: white;
 }
@@ -367,7 +403,9 @@ td button:last-of-type {
 }
 
 
-/* BUTTON UMUM */
+/* ========================================
+   BUTTON UMUM
+======================================== */
 
 td button {
     border: none;
@@ -390,7 +428,7 @@ td button:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 5px 12px rgba(0,0,0,0.2);
+        0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -447,7 +485,7 @@ form select:focus {
 
     box-shadow:
         0 0 0 4px
-        rgba(139,92,246,0.15);
+        rgba(139, 92, 246, 0.15);
 }
 
 
@@ -482,7 +520,7 @@ form button[type="submit"] {
 
     box-shadow:
         0 5px 15px
-        rgba(139,92,246,0.3);
+        rgba(139, 92, 246, 0.3);
 }
 
 
@@ -491,7 +529,7 @@ form button[type="submit"]:hover {
 
     box-shadow:
         0 10px 20px
-        rgba(139,92,246,0.4);
+        rgba(139, 92, 246, 0.4);
 }
 
 
@@ -525,6 +563,10 @@ footer {
     }
 
 
+    /*
+       4 card menjadi 2 kolom
+    */
+
     .ringkasan-grid {
         grid-template-columns:
             repeat(2, 1fr);
@@ -535,15 +577,20 @@ footer {
         display: block;
     }
 
+
     header nav {
         display: none;
+
         width: 100%;
+
         order: 3;
     }
+
 
     header nav ul {
         flex-direction: column;
     }
+
 
     .nav-toggle:checked ~ nav {
         display: block;
@@ -585,8 +632,17 @@ footer {
     }
 
 
+    /*
+       Card menjadi 1 kolom
+    */
+
     .ringkasan-grid {
         grid-template-columns: 1fr;
+    }
+
+
+    .ringkasan-grid article {
+        min-height: 130px;
     }
 
 
